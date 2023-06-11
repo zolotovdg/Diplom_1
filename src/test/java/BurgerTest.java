@@ -39,8 +39,7 @@ public class BurgerTest {
         assertEquals(expectedPrice, actualPrice, 0.01f);
     }
 
-    @Description("Проверяем, что метод getReceipt() возвращает ожидаемый чек с " +
-            "информацией о бургере, включая название булочки и список ингредиентов")
+    @Description("Проверяем, что метод getReceipt() возвращает ожидаемый чек с информацией о бургере")
     @Test
     public void testGetReceipt() {
         String expectedReceipt = String.format("(==== white bun ====)%n" +
@@ -57,11 +56,12 @@ public class BurgerTest {
     @Test
     public void testRemoveIngredient() {
         burger.removeIngredient(1);
-        assertEquals(1, burger.ingredients.size());
+        int newBurgerSize = burger.ingredients.size();
+        assertEquals(1, newBurgerSize);
         assertEquals(sauce, burger.ingredients.get(0));
     }
 
-    @Description("Проверяем возможно изменения ингридиентов ")
+    @Description("Проверяем возможно изменения ингридиентов")
     @Test
     public void testMoveIngredient() {
         burger.moveIngredient(0, 1);

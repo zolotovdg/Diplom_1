@@ -20,7 +20,7 @@ public class BurgerParametrizedTest {
         this.expectedPrice = expectedPrice;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Стоимость булочки. Тестовые данные: {0} {1}")
     public static Object[][] getPriceData() {
         return new Object[][]{{10, 10, 30},
                 {20, 20, 60}
